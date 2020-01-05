@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-01-05 sön 01:00 -->
+<!-- 2020-01-05 sön 11:28 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ASCII art firework for the new year</title>
@@ -279,7 +279,7 @@ And if you:
 </p>
 <ul class="org-ul">
 <li>Love your terminal</li>
-<li>Are a fan of ASCII art, which I'm sure most of us are.</li>
+<li>Are a fan of <a href="https://en.wikipedia.org/wiki/ASCII_art">ASCII art</a>, which I'm sure most of us are.</li>
 <li>Want to make cool thing to boostup your mood every morning you open up your compture.</li>
 </ul>
 
@@ -294,16 +294,99 @@ It was just so fancy to me, just a bit missing of some nice features:
 <ul class="org-ul">
 <li>Color</li>
 <li>Auto scale</li>
-<li>User configuration</li>
+<li>User customization</li>
 </ul>
 <p>
 So I decided to add those features to it.
 </p>
+
+<p>
+Now we can use it to make our firework.
+</p>
+
+<div id="outline-container-org60a133e" class="outline-2">
+<h2 id="org60a133e">Generate our mood</h2>
+<div class="outline-text-2" id="text-org60a133e">
+<p>
+I use <a href="https://img.freepik.com/free-vector/fireworks-new-year-2020-background_52683-29349.jpg?size=626&amp;ext=jpg">this image</a> to generate our <code>ASCII</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">./img2ascii -m fit firework-new-year-2020_src.jpg -o firework.txt
+</pre>
+</div>
+
+<p>
+Then let test the output
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">cat firework.txt
+</pre>
+</div>
+
+
+<figure>
+<img src="images/firework-new-year-2020.jpg" alt="Firework 2020" title="Firework Happy New Year 2020">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org6653f76" class="outline-2">
+<h2 id="org6653f76">Setup our mot</h2>
+<div class="outline-text-2" id="text-org6653f76">
+<p>
+If we happy with the output then let save it and setup our mood.
+I normally have a set of moods that I like
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">mkdir -p ~/.bashrc.d/mots/
+cp firework.txt ~/.bashrc.d/mots/
+</pre>
+</div>
+
+<p>
+Then I have a list of hook scripts that I want to run to setup my environment.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #FF1493;">for</span> f<span style="color: #FF1493;"> in</span> $(<span style="color: #AF87FF; font-weight: bold;">find</span> ~/.bashrc.d/ -maxdepth 1 -type f); <span style="color: #FF1493;">do</span>
+  <span style="color: #FF1493;">source</span> $<span style="color: #FF8C00;">f</span>
+<span style="color: #FF1493;">done</span>
+</pre>
+</div>
+
+<p>
+Finally, setup our <code>/.bashrc.d/mot</code> script to randomly display our mots.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #8B8878;"># </span><span style="color: #8B8878;">Skip it if we are inside emacs</span>
+<span style="color: #FF1493;">if</span> [ -n <span style="color: #CDC673;">"$INSIDE_EMACS"</span> ]; <span style="color: #FF1493;">then</span>
+ <span style="color: #FF1493;">return</span>
+<span style="color: #FF1493;">fi</span>
+
+<span style="color: #FF8C00;">pwd</span>=$(<span style="color: #AF87FF; font-weight: bold;">dirname</span> <span style="color: #CDC673;">"${BASH_SOURCE[0]}"</span>)
+
+<span style="color: #FF1493;">declare</span> -a pic
+
+<span style="color: #FF8C00;">index</span>=0
+<span style="color: #FF1493;">for</span> item<span style="color: #FF1493;"> in</span> $(<span style="color: #AF87FF; font-weight: bold;">ls</span> $<span style="color: #FF8C00;">pwd</span>/mots); <span style="color: #FF1493;">do</span>
+        <span style="color: #FF8C00;">pic</span>[$<span style="color: #FF8C00;">index</span>]=<span style="color: #CDC673;">"$item"</span>
+        <span style="color: #FF8C00;">index</span>=$(( index  + 1 ))
+<span style="color: #FF1493;">done</span>
+<span style="color: #FF8C00;">today</span>=$(( RANDOM % ${#<span style="color: #FF8C00;">pic</span>[@]} ))
+cat <span style="color: #CDC673;">"$pwd/mots/${pic[$today]}"</span>
+</pre>
+</div>
+
+<p>
+Then let's enjoy it!
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 Copyright 2020 Tai Dinh (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML).<br>
-Last updated 2020-01-05 sön 00:55. <br>
+Last updated 2020-01-05 sön 11:28. <br>
 Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.1).
 </div>
 <div id="disqus_thread"></div>
