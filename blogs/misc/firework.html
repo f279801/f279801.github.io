@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-01-05 sön 11:28 -->
+<!-- 2020-01-14 tis 00:02 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ASCII art firework for the new year</title>
@@ -202,9 +202,11 @@ Then let make an ASCII art firework.@@html:&lt;br&gt;&lt;br&gt;@@
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="../../css/site.css"/>
-<link rel="alternate" type="application/rss+xml"
-                href="http://strawhat.die/blog/blog.xml"
-                title="RSS feed">
+<link rel='icon' type='image/png' sizes='16x16' href='/images/favicon-16x16.png'/>
+
+              <link rel="alternate" type="application/rss+xml"
+                    href="http://strawhat.blog/blog/blog.xml"
+                    title="RSS feed">
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -274,41 +276,41 @@ for the JavaScript code in this tag.
 <header>
 <h1 class="title">ASCII art firework for the new year</h1>
 </header><p>
-So it's 2020. Let celebrate it by a firework.
-And if you:
+So it's 2020. Let celebrate it by a firework.<br>
+And if you:<br>
 </p>
 <ul class="org-ul">
-<li>Love your terminal</li>
-<li>Are a fan of <a href="https://en.wikipedia.org/wiki/ASCII_art">ASCII art</a>, which I'm sure most of us are.</li>
-<li>Want to make cool thing to boostup your mood every morning you open up your compture.</li>
+<li>Love your terminal<br></li>
+<li>Are a fan of <a href="https://en.wikipedia.org/wiki/ASCII_art">ASCII art</a>, which I'm sure most of us are.<br></li>
+<li>Want to make cool thing to boostup your mood every morning you open up your compture.<br></li>
 </ul>
 
 <p>
-Then let make an <code>ASCII</code> art firework.
+Then let make an <code>ASCII</code> art firework.<br>
 </p>
 
 <p>
-I create the <a href="https://github.com/f279801/img2ascii">img2ascii</a> tool sometimes ago since one of my friend show me the <a href="https://github.com/electronut/pp/tree/master/ascii">original version</a> of it.
-It was just so fancy to me, just a bit missing of some nice features:
+I create the <a href="https://github.com/f279801/img2ascii">img2ascii</a> tool sometimes ago since one of my friend show me the <a href="https://github.com/electronut/pp/tree/master/ascii">original version</a> of it.<br>
+It was just so fancy to me, just a bit missing of some nice features:<br>
 </p>
 <ul class="org-ul">
-<li>Color</li>
-<li>Auto scale</li>
-<li>User customization</li>
+<li>Color<br></li>
+<li>Auto scale<br></li>
+<li>User customization<br></li>
 </ul>
 <p>
-So I decided to add those features to it.
+So I decided to add those features to it.<br>
 </p>
 
 <p>
-Now we can use it to make our firework.
+Now we can use it to make our firework.<br>
 </p>
 
-<div id="outline-container-org60a133e" class="outline-2">
-<h2 id="org60a133e">Generate our mood</h2>
-<div class="outline-text-2" id="text-org60a133e">
+<div id="outline-container-org0a1ab7c" class="outline-2">
+<h2 id="org0a1ab7c">Generate our mood</h2>
+<div class="outline-text-2" id="text-org0a1ab7c">
 <p>
-I use <a href="https://img.freepik.com/free-vector/fireworks-new-year-2020-background_52683-29349.jpg?size=626&amp;ext=jpg">this image</a> to generate our <code>ASCII</code>.
+I use <a href="https://img.freepik.com/free-vector/fireworks-new-year-2020-background_52683-29349.jpg?size=626&amp;ext=jpg">this image</a> to generate our <code>ASCII</code>.<br>
 </p>
 <div class="org-src-container">
 <pre class="src src-sh">./img2ascii -m fit firework-new-year-2020_src.jpg -o firework.txt
@@ -316,7 +318,7 @@ I use <a href="https://img.freepik.com/free-vector/fireworks-new-year-2020-backg
 </div>
 
 <p>
-Then let test the output
+Then let test the output<br>
 </p>
 <div class="org-src-container">
 <pre class="src src-sh">cat firework.txt
@@ -325,18 +327,18 @@ Then let test the output
 
 
 <figure>
-<img src="images/firework-new-year-2020.jpg" alt="Firework 2020" title="Firework Happy New Year 2020">
+<img src="images/firework-new-year-2020.jpg" alt="Firework 2020" title="Firework Happy New Year 2020"><br>
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org6653f76" class="outline-2">
-<h2 id="org6653f76">Setup our mot</h2>
-<div class="outline-text-2" id="text-org6653f76">
+<div id="outline-container-org55ee497" class="outline-2">
+<h2 id="org55ee497">Setup our mot</h2>
+<div class="outline-text-2" id="text-org55ee497">
 <p>
-If we happy with the output then let save it and setup our mood.
-I normally have a set of moods that I like
+If we happy with the output then let save it and setup our mood.<br>
+I normally have a set of moods that I like<br>
 </p>
 <div class="org-src-container">
 <pre class="src src-sh">mkdir -p ~/.bashrc.d/mots/
@@ -345,7 +347,7 @@ cp firework.txt ~/.bashrc.d/mots/
 </div>
 
 <p>
-Then I have a list of hook scripts that I want to run to setup my environment.
+Then I have a list of hook scripts that I want to run to setup my environment.<br>
 </p>
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #FF1493;">for</span> f<span style="color: #FF1493;"> in</span> $(<span style="color: #AF87FF; font-weight: bold;">find</span> ~/.bashrc.d/ -maxdepth 1 -type f); <span style="color: #FF1493;">do</span>
@@ -355,7 +357,7 @@ Then I have a list of hook scripts that I want to run to setup my environment.
 </div>
 
 <p>
-Finally, setup our <code>/.bashrc.d/mot</code> script to randomly display our mots.
+Finally, setup our <code>/.bashrc.d/mot</code> script to randomly display our mots.<br>
 </p>
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #8B8878;"># </span><span style="color: #8B8878;">Skip it if we are inside emacs</span>
@@ -378,7 +380,7 @@ cat <span style="color: #CDC673;">"$pwd/mots/${pic[$today]}"</span>
 </div>
 
 <p>
-Then let's enjoy it!
+Then let's enjoy it!<br>
 </p>
 </div>
 </div>
@@ -386,7 +388,7 @@ Then let's enjoy it!
 <div id="postamble" class="status">
 <div class='footer'>
 Copyright 2020 Tai Dinh (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML).<br>
-Last updated 2020-01-05 sön 11:28. <br>
+Last updated 2020-01-05 sön 11:36. <br>
 Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.1).
 </div>
 <div id="disqus_thread"></div>

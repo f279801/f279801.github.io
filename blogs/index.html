@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-01-05 sön 11:28 -->
+<!-- 2020-01-14 tis 00:07 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>&lrm;</title>
+<title>Straw Hat's Blogs</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Tai Dinh">
 <style type="text/css">
@@ -192,9 +192,11 @@
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="../css/site.css" />
-<link rel="alternate" type="application/rss+xml"
-                href="http://strawhat.die/blog/blog.xml"
-                title="RSS feed">
+<link rel='icon' type='image/png' sizes='16x16' href='/images/favicon-16x16.png'/>
+
+              <link rel="alternate" type="application/rss+xml"
+                    href="http://strawhat.blog/blog/blog.xml"
+                    title="RSS feed">
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -261,10 +263,56 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
+<header>
+<h1 class="title">Straw Hat's Blogs</h1>
+</header>
+<div id="outline-container-orgdac8bc2" class="outline-2">
+<h2 id="orgdac8bc2">Priority Queue</h2>
+<div class="outline-text-2" id="text-orgdac8bc2">
+<p>
+<div class="pubdate"> jan 13, 2020 </div>
+A <b><i>priority queue</i></b> is a datastructure for maintaining a set S of elements, each with an associated <b><i>key</i></b> and supports below operations:
+</p>
+<ul class="org-ul">
+<li><code>INSERT(S, x)</code> insert the element x into the set S.</li>
+<li><code>MAXIMUM(S)</code> returns the element of S wiht lagerst key.</li>
+<li><code>EXTRACT-MAX(S)</code> removes and returns the elements of S with the largest key.</li>
+<li><code>INCREASE-KEY(S, k)</code> increase the value of element x's key to new value k, which is assumed to be larger than or equal to the current value of x's key.</li>
+</ul>
+<p>
+<b><i>Priority queue</i></b> can be used to implement job scheduler. When a job is finished or interupted, the scheduler will select the highest priorty job among the list of pending job by calling <code>EXTRACT-MAX</code>.
+The scheduler can also add a new job or increase a current job priority by calling <code>INSERT</code> or <code>INCREASE-KEY</code> accordingly.
+</p>
 
-<div id="outline-container-org6d3523f" class="outline-2">
-<h2 id="org6d3523f">ASCII art firework for the new year</h2>
-<div class="outline-text-2" id="text-org6d3523f">
+<p>
+<a href="../blogs/algo/priority_queue.html">Read more&#x2026;</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org4126c32" class="outline-2">
+<h2 id="org4126c32">Heap data structure</h2>
+<div class="outline-text-2" id="text-org4126c32">
+<p>
+<div class="pubdate"> jan 06, 2020 </div>
+In computre science, a <code>(binary) heap</code> data structure is a specialized <code>(binary) tree</code> that has below properties:
+</p>
+<ul class="org-ul">
+<li>In a <code>min heap</code>, if (P) is a parent node of (C) then the value [key] of (P) is always less than or equal to the value [key] of (C)</li>
+<li>In a <code>max heap</code>, if (P) is a parent node of (C) then the value [key] of (P) is always greater than or equal to the value [key] of (C)</li>
+</ul>
+<p>
+The node at the <i>top</i> of the heap is called the <b>root node</b>.
+<img src="./algo/images/heap_1.png" alt="heap_1.png">
+</p>
+
+<p>
+<a href="../blogs/algo/heap.html">Read more&#x2026;</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org130832f" class="outline-2">
+<h2 id="org130832f">ASCII art firework for the new year</h2>
+<div class="outline-text-2" id="text-org130832f">
 <p>
 <div class="pubdate"> jan 05, 2020 </div>
 So it's 2020. Let celebrate it by a firework.
@@ -291,7 +339,7 @@ Then let make an ASCII art firework.<br><br>
 <div id="postamble" class="status">
 <div class='footer'>
 Copyright 2020 Tai Dinh (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML).<br>
-Last updated 2020-01-05 sön 11:28. <br>
+Last updated 2020-01-14 tis 00:07. <br>
 Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.1).
 </div>
 <div id="disqus_thread"></div>
