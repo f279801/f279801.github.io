@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-01-14 tis 00:07 -->
+<!-- 2020-01-18 lör 00:20 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Straw Hat's Blogs</title>
@@ -194,9 +194,9 @@
 <link rel="stylesheet" type="text/css" href="../css/site.css" />
 <link rel='icon' type='image/png' sizes='16x16' href='/images/favicon-16x16.png'/>
 
-              <link rel="alternate" type="application/rss+xml"
-                    href="http://strawhat.blog/blog/blog.xml"
-                    title="RSS feed">
+          <link rel="alternate" type="application/rss+xml"
+                href="http://strawhat.blog/blog/blog.xml"
+                title="RSS feed">
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -266,26 +266,44 @@ for the JavaScript code in this tag.
 <header>
 <h1 class="title">Straw Hat's Blogs</h1>
 </header>
+<div id="outline-container-org1421342" class="outline-2">
+<h2 id="org1421342">Heap sort</h2>
+<div class="outline-text-2" id="text-org1421342">
+<p>
+<div class="pubdate"> jan 17, 2020 </div><br>
+<code>Heap sort</code>, as the name indicated, is a sorting algorithm based on the <code>Heap</code> data structure.<br>
+As we already know, one of the <code>Max Heap</code> property is that the maximum value of the heap is its root.<br>
+It means, right after building the heap, we can directly get the maximum item of the list and put it to the right position by swapping the first and last item of the list.<br>
+After this, the last item can be removed out of the heap by decreasing its size to 1.<br>
+The heap property can be mantained by calling <code>HEAPIFY</code>.<br>
+The same process can be repeated until we have the whole list sorted.<br>
+</p>
+
+<p>
+<a href="../blogs/algo/heap_sort.html">Read more&#x2026;</a><br>
+</p>
+</div>
+</div>
 <div id="outline-container-orgdac8bc2" class="outline-2">
 <h2 id="orgdac8bc2">Priority Queue</h2>
 <div class="outline-text-2" id="text-orgdac8bc2">
 <p>
-<div class="pubdate"> jan 13, 2020 </div>
-A <b><i>priority queue</i></b> is a datastructure for maintaining a set S of elements, each with an associated <b><i>key</i></b> and supports below operations:
+<div class="pubdate"> jan 13, 2020 </div><br>
+A <b><i>priority queue</i></b> is a datastructure for maintaining a set S of elements, each with an associated <b><i>key</i></b> and supports below operations:<br>
 </p>
 <ul class="org-ul">
-<li><code>INSERT(S, x)</code> insert the element x into the set S.</li>
-<li><code>MAXIMUM(S)</code> returns the element of S wiht lagerst key.</li>
-<li><code>EXTRACT-MAX(S)</code> removes and returns the elements of S with the largest key.</li>
-<li><code>INCREASE-KEY(S, k)</code> increase the value of element x's key to new value k, which is assumed to be larger than or equal to the current value of x's key.</li>
+<li><code>INSERT(S, x)</code> insert the element x into the set S.<br></li>
+<li><code>MAXIMUM(S)</code> returns the element of S wiht lagerst key.<br></li>
+<li><code>EXTRACT-MAX(S)</code> removes and returns the elements of S with the largest key.<br></li>
+<li><code>INCREASE-KEY(S, k)</code> increase the value of element x's key to new value k, which is assumed to be larger than or equal to the current value of x's key.<br></li>
 </ul>
 <p>
-<b><i>Priority queue</i></b> can be used to implement job scheduler. When a job is finished or interupted, the scheduler will select the highest priorty job among the list of pending job by calling <code>EXTRACT-MAX</code>.
-The scheduler can also add a new job or increase a current job priority by calling <code>INSERT</code> or <code>INCREASE-KEY</code> accordingly.
+<b><i>Priority queue</i></b> can be used to implement job scheduler. When a job is finished or interupted, the scheduler will select the highest priorty job among the list of pending job by calling <code>EXTRACT-MAX</code>.<br>
+The scheduler can also add a new job or increase a current job priority by calling <code>INSERT</code> or <code>INCREASE-KEY</code> accordingly.<br>
 </p>
 
 <p>
-<a href="../blogs/algo/priority_queue.html">Read more&#x2026;</a>
+<a href="../blogs/algo/priority_queue.html">Read more&#x2026;</a><br>
 </p>
 </div>
 </div>
@@ -293,20 +311,20 @@ The scheduler can also add a new job or increase a current job priority by calli
 <h2 id="org4126c32">Heap data structure</h2>
 <div class="outline-text-2" id="text-org4126c32">
 <p>
-<div class="pubdate"> jan 06, 2020 </div>
-In computre science, a <code>(binary) heap</code> data structure is a specialized <code>(binary) tree</code> that has below properties:
+<div class="pubdate"> jan 06, 2020 </div><br>
+In computre science, a <code>(binary) heap</code> data structure is a specialized <code>(binary) tree</code> that has below properties:<br>
 </p>
 <ul class="org-ul">
-<li>In a <code>min heap</code>, if (P) is a parent node of (C) then the value [key] of (P) is always less than or equal to the value [key] of (C)</li>
-<li>In a <code>max heap</code>, if (P) is a parent node of (C) then the value [key] of (P) is always greater than or equal to the value [key] of (C)</li>
+<li>In a <code>min heap</code>, if (P) is a parent node of (C) then the value [key] of (P) is always less than or equal to the value [key] of (C)<br></li>
+<li>In a <code>max heap</code>, if (P) is a parent node of (C) then the value [key] of (P) is always greater than or equal to the value [key] of (C)<br></li>
 </ul>
 <p>
-The node at the <i>top</i> of the heap is called the <b>root node</b>.
-<img src="./algo/images/heap_1.png" alt="heap_1.png">
+The node at the <i>top</i> of the heap is called the <b>root node</b>.<br>
+<img src="./algo/images/heap_1.png" alt="heap_1.png"><br>
 </p>
 
 <p>
-<a href="../blogs/algo/heap.html">Read more&#x2026;</a>
+<a href="../blogs/algo/heap.html">Read more&#x2026;</a><br>
 </p>
 </div>
 </div>
@@ -314,21 +332,21 @@ The node at the <i>top</i> of the heap is called the <b>root node</b>.
 <h2 id="org130832f">ASCII art firework for the new year</h2>
 <div class="outline-text-2" id="text-org130832f">
 <p>
-<div class="pubdate"> jan 05, 2020 </div>
-So it's 2020. Let celebrate it by a firework.
-And if you:
+<div class="pubdate"> jan 05, 2020 </div><br>
+So it's 2020. Let celebrate it by a firework.<br>
+And if you:<br>
 </p>
 <ul class="org-ul">
-<li>Love your terminal</li>
-<li>Are a fan of ASCII art</li>
-<li>Want to make cool thing to boostup your mood every morning you open up your compture.</li>
+<li>Love your terminal<br></li>
+<li>Are a fan of ASCII art<br></li>
+<li>Want to make cool thing to boostup your mood every morning you open up your compture.<br></li>
 </ul>
 <p>
-Then let make an ASCII art firework.<br><br>
+Then let make an ASCII art firework.<br><br><br>
 </p>
 <p alt="Firework 2020" title="Firework Happy New Year 2020">
-<img src="misc/images/firework-new-year-2020.jpg" alt="Firework 2020" title="Firework Happy New Year 2020">
-<br>
+<img src="misc/images/firework-new-year-2020.jpg" alt="Firework 2020" title="Firework Happy New Year 2020"><br>
+<br><br>
 </p>
 
 <p>
@@ -339,7 +357,7 @@ Then let make an ASCII art firework.<br><br>
 <div id="postamble" class="status">
 <div class='footer'>
 Copyright 2020 Tai Dinh (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML).<br>
-Last updated 2020-01-14 tis 00:07. <br>
+Last updated 2020-01-18 lör 00:20. <br>
 Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.1).
 </div>
 <div id="disqus_thread"></div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-01-14 tis 00:04 -->
+<!-- 2020-01-18 lör 00:05 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Heap data structure</title>
@@ -200,9 +200,9 @@ The node at the /top/ of the heap is called the *root node*.
 <link rel="stylesheet" type="text/css" href="../../css/site.css"/>
 <link rel='icon' type='image/png' sizes='16x16' href='/images/favicon-16x16.png'/>
 
-              <link rel="alternate" type="application/rss+xml"
-                    href="http://strawhat.blog/blog/blog.xml"
-                    title="RSS feed">
+          <link rel="alternate" type="application/rss+xml"
+                href="http://strawhat.blog/blog/blog.xml"
+                title="RSS feed">
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -515,8 +515,9 @@ T(n) &= \sum_{i = 0}^{\verb+Height of heap+} n_i * O(i)\\
   <span style="color: #FF1493;">return</span> os;
 }
 
-<span style="color: #5FD7FF;">void</span> <span style="color: #87D700;">swap</span>(<span style="color: #5FD7FF;">int</span> &amp;<span style="color: #FF8C00;">x</span>, <span style="color: #5FD7FF;">int</span> &amp;<span style="color: #FF8C00;">y</span>) {
-  <span style="color: #5FD7FF;">int</span> <span style="color: #FF8C00;">tmp</span> = x;
+<span style="color: #FF1493;">template</span> &lt;<span style="color: #FF1493;">typename</span> <span style="color: #5FD7FF;">T</span>&gt;
+<span style="color: #5FD7FF;">void</span> <span style="color: #87D700;">swap</span>(<span style="color: #5FD7FF;">T</span> &amp;<span style="color: #FF8C00;">x</span>, <span style="color: #5FD7FF;">T</span> &amp;<span style="color: #FF8C00;">y</span>) {
+  <span style="color: #5FD7FF;">T</span> <span style="color: #FF8C00;">tmp</span> = x;
   x = y;
   y = tmp;
 }
@@ -634,7 +635,7 @@ After min heapify:
 <div id="postamble" class="status">
 <div class='footer'>
 Copyright 2020 Tai Dinh (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML).<br>
-Last updated 2020-01-14 tis 00:03. <br>
+Last updated 2020-01-18 lör 00:05. <br>
 Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.1).
 </div>
 <div id="disqus_thread"></div>
