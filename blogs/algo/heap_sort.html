@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-01-18 lör 00:20 -->
+<!-- 2020-01-22 ons 22:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Heap sort</title>
@@ -14,6 +14,7 @@ After this, the last item can be removed out of the heap by decreasing its size 
 The heap property can be mantained by calling ~HEAPIFY~.
 The same process can be repeated until we have the whole list sorted."
 >
+<meta name="keywords" content="algorithm heap sort">
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -199,6 +200,8 @@ The same process can be repeated until we have the whole list sorted."
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="../../css/site.css"/>
+<script src="/js/webcomponentsjs-0.7.24/webcomponents.js"></script>
+<link rel="import" href="/tags/tag_nav.html"/>
 <link rel='icon' type='image/png' sizes='16x16' href='/images/favicon-16x16.png'/>
 
           <link rel="alternate" type="application/rss+xml"
@@ -290,6 +293,21 @@ for the JavaScript code in this tag.
 <li><a href='/theindex.html'>Index</a></li>
 </ul>
 </div>
+
+<nav id='tags-navigation'></nav>
+<script>
+  document.addEventListener( 'WebComponentsReady', function () {
+    var contentFilled = document.querySelector('#tags-navigation').querySelector('p');
+    if (!contentFilled) {
+      var link = document.querySelector('link[rel="import"]');
+      if (link) {
+        var content = link.import.querySelector('div[id="content"]');
+        var tagsref = document.importNode(content.querySelector('p'), true);
+        document.querySelector('#tags-navigation').appendChild(tagsref);
+      }
+    }
+  })
+</script>
 </div>
 <div id="content">
 <header>
@@ -299,7 +317,7 @@ for the JavaScript code in this tag.
 As we already know, one of the <code>Max Heap</code> property is that the maximum value of the heap is its root.<br>
 It means, right after building the heap, we can directly get the maximum item of the list and put it to the right position by swapping the first and last item of the list.<br>
 After this, the last item can be removed out of the heap by decreasing its size to 1.<br>
-The heap property can be mantained by calling <a href="heap.html#org5e2c131"><code>HEAPIFY</code></a>.<br>
+The heap property can be mantained by calling <a href="heap.html#orgc74a3bd"><code>HEAPIFY</code></a>.<br>
 The same process can be repeated until we have the whole list sorted.<br>
 </p>
 
@@ -492,7 +510,7 @@ After sort
 <div id="postamble" class="status">
 <div class='footer'>
 Copyright 2020 Tai Dinh (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML).<br>
-Last updated 2020-01-18 lör 00:20. <br>
+Last updated 2020-01-22 ons 22:54. <br>
 Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.1).
 </div>
 <div id="disqus_thread"></div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-01-14 tis 00:02 -->
+<!-- 2020-01-22 ons 22:53 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ASCII art firework for the new year</title>
@@ -14,9 +14,9 @@ And if you:
 - Want to make cool thing to boostup your mood every morning you open up your compture.
 Then let make an ASCII art firework.@@html:&lt;br&gt;&lt;br&gt;@@
 #+ATTR_HTML: :alt Firework 2020 :title Firework Happy New Year 2020
-[[file:misc/images/firework-new-year-2020.jpg]]
-@@html:&lt;br&gt;@@"
+@@html:&lt;img src=&quot;/blogs/misc/images/firework-new-year-2020.jpg&quot; alt=&quot;Firework 2020&quot; title=&quot;Firework and happy new year 2020&quot;&gt;&lt;br&gt;@@"
 >
+<meta name="keywords" content="ascii_art python utilities ansi">
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -202,11 +202,13 @@ Then let make an ASCII art firework.@@html:&lt;br&gt;&lt;br&gt;@@
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="../../css/site.css"/>
+<script src="/js/webcomponentsjs-0.7.24/webcomponents.js"></script>
+<link rel="import" href="/tags/tag_nav.html"/>
 <link rel='icon' type='image/png' sizes='16x16' href='/images/favicon-16x16.png'/>
 
-              <link rel="alternate" type="application/rss+xml"
-                    href="http://strawhat.blog/blog/blog.xml"
-                    title="RSS feed">
+          <link rel="alternate" type="application/rss+xml"
+                href="http://strawhat.blog/blog/blog.xml"
+                title="RSS feed">
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -271,6 +273,21 @@ for the JavaScript code in this tag.
 <li><a href='/theindex.html'>Index</a></li>
 </ul>
 </div>
+
+<nav id='tags-navigation'></nav>
+<script>
+  document.addEventListener( 'WebComponentsReady', function () {
+    var contentFilled = document.querySelector('#tags-navigation').querySelector('p');
+    if (!contentFilled) {
+      var link = document.querySelector('link[rel="import"]');
+      if (link) {
+        var content = link.import.querySelector('div[id="content"]');
+        var tagsref = document.importNode(content.querySelector('p'), true);
+        document.querySelector('#tags-navigation').appendChild(tagsref);
+      }
+    }
+  })
+</script>
 </div>
 <div id="content">
 <header>
@@ -306,9 +323,9 @@ So I decided to add those features to it.<br>
 Now we can use it to make our firework.<br>
 </p>
 
-<div id="outline-container-org0a1ab7c" class="outline-2">
-<h2 id="org0a1ab7c">Generate our mood</h2>
-<div class="outline-text-2" id="text-org0a1ab7c">
+<div id="outline-container-org5625f32" class="outline-2">
+<h2 id="org5625f32">Generate our mood</h2>
+<div class="outline-text-2" id="text-org5625f32">
 <p>
 I use <a href="https://img.freepik.com/free-vector/fireworks-new-year-2020-background_52683-29349.jpg?size=626&amp;ext=jpg">this image</a> to generate our <code>ASCII</code>.<br>
 </p>
@@ -333,9 +350,9 @@ Then let test the output<br>
 </div>
 </div>
 
-<div id="outline-container-org55ee497" class="outline-2">
-<h2 id="org55ee497">Setup our mot</h2>
-<div class="outline-text-2" id="text-org55ee497">
+<div id="outline-container-orgb7ff9b9" class="outline-2">
+<h2 id="orgb7ff9b9">Setup our mot</h2>
+<div class="outline-text-2" id="text-orgb7ff9b9">
 <p>
 If we happy with the output then let save it and setup our mood.<br>
 I normally have a set of moods that I like<br>
@@ -388,7 +405,7 @@ Then let's enjoy it!<br>
 <div id="postamble" class="status">
 <div class='footer'>
 Copyright 2020 Tai Dinh (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML).<br>
-Last updated 2020-01-05 sön 11:36. <br>
+Last updated 2020-01-19 sön 23:33. <br>
 Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.1).
 </div>
 <div id="disqus_thread"></div>

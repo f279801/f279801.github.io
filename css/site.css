@@ -36,7 +36,7 @@ nav#table-of-contents h2 {
     margin-top: .375rem;
 }
 
-av#table-of-contents ul {
+nav#table-of-contents ul {
     padding-left: .5rem;
 }
 
@@ -48,6 +48,20 @@ nav#table-of-contents a {
   color: #f92672;
 }
 
+
+
+nav#tags-navigation {
+    position: fixed;
+    right: 0px;
+    padding: 1rem;
+    max-width: 15%;
+    background: #222;
+    text-align: right;
+}
+
+nav#tags-navigation p {
+  text-align:right;
+}
 
 @media (max-width: 768px) {
   nav {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-01-18 lör 00:05 -->
+<!-- 2020-01-22 ons 22:52 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Heap data structure</title>
@@ -11,8 +11,9 @@
 + In a ~min heap~, if (P) is a parent node of (C) then the value [key] of (P) is always less than or equal to the value [key] of (C)
 + In a ~max heap~, if (P) is a parent node of (C) then the value [key] of (P) is always greater than or equal to the value [key] of (C)
 The node at the /top/ of the heap is called the *root node*.
-[[file:./algo/images/heap_1.png]]"
+@@html:&lt;img src=&quot;/blogs/algo/images/heap_1.png&quot; alt=&quot;Heap data strcuture&quot;&gt;&lt;br&gt;@@"
 >
+<meta name="keywords" content="algorithm data_structure heap">
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -198,6 +199,8 @@ The node at the /top/ of the heap is called the *root node*.
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="../../css/site.css"/>
+<script src="/js/webcomponentsjs-0.7.24/webcomponents.js"></script>
+<link rel="import" href="/tags/tag_nav.html"/>
 <link rel='icon' type='image/png' sizes='16x16' href='/images/favicon-16x16.png'/>
 
           <link rel="alternate" type="application/rss+xml"
@@ -289,6 +292,21 @@ for the JavaScript code in this tag.
 <li><a href='/theindex.html'>Index</a></li>
 </ul>
 </div>
+
+<nav id='tags-navigation'></nav>
+<script>
+  document.addEventListener( 'WebComponentsReady', function () {
+    var contentFilled = document.querySelector('#tags-navigation').querySelector('p');
+    if (!contentFilled) {
+      var link = document.querySelector('link[rel="import"]');
+      if (link) {
+        var content = link.import.querySelector('div[id="content"]');
+        var tagsref = document.importNode(content.querySelector('p'), true);
+        document.querySelector('#tags-navigation').appendChild(tagsref);
+      }
+    }
+  })
+</script>
 </div>
 <div id="content">
 <header>
@@ -297,19 +315,19 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc1ea8a8">Represent a heap</a></li>
-<li><a href="#org5e2c131">Maintaining the heap property</a>
+<li><a href="#org5d296f6">Represent a heap</a></li>
+<li><a href="#orgc74a3bd">Maintaining the heap property</a>
 <ul>
-<li><a href="#orgd22d8ac">Running time of MAX-HEAPIFY</a></li>
+<li><a href="#org9e7b0ec">Running time of MAX-HEAPIFY</a></li>
 </ul>
 </li>
-<li><a href="#org4578491">Building the heap</a>
+<li><a href="#org2c2d8fa">Building the heap</a>
 <ul>
-<li><a href="#org475a15d">Running time of BUILD-HEAP</a></li>
+<li><a href="#org77ae63a">Running time of BUILD-HEAP</a></li>
 </ul>
 </li>
-<li><a href="#orgbaa1332">Applications</a></li>
-<li><a href="#orgcc3a1b6">Complete Implementation</a></li>
+<li><a href="#org382841a">Applications</a></li>
+<li><a href="#org503062d">Complete Implementation</a></li>
 </ul>
 </div>
 </nav>
@@ -327,15 +345,15 @@ Also see <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> for more in
 </p>
 
 
-<figure id="org20d5e59">
+<figure id="org9ad96d7">
 <img src="./images/heap_1.png" alt="heap_1.png"><br>
 
 <figcaption><span class="figure-number">Figure 1: </span>Max-heap view as a binary tree</figcaption>
 </figure>
 
-<div id="outline-container-orgc1ea8a8" class="outline-2">
-<h2 id="orgc1ea8a8">Represent a heap</h2>
-<div class="outline-text-2" id="text-orgc1ea8a8">
+<div id="outline-container-org5d296f6" class="outline-2">
+<h2 id="org5d296f6">Represent a heap</h2>
+<div class="outline-text-2" id="text-org5d296f6">
 
 <figure>
 <img src="./images/heap_represented_array.jpg" alt="heap_represented_array.jpg"><br>
@@ -358,9 +376,9 @@ Also see <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> for more in
 </div>
 </div>
 
-<div id="outline-container-org5e2c131" class="outline-2">
-<h2 id="org5e2c131">Maintaining the heap property</h2>
-<div class="outline-text-2" id="text-org5e2c131">
+<div id="outline-container-orgc74a3bd" class="outline-2">
+<h2 id="orgc74a3bd">Maintaining the heap property</h2>
+<div class="outline-text-2" id="text-orgc74a3bd">
 <p>
 To maintain the max-heap property, we call the procedure MAX-HEAPIFY(A, i) which receive an array <i>A</i> and an index <i>i</i>.<br>
 When MAX-HEAPIFY is called, we assume that each tree root at LEFT(i) and RIGHT(i) is already a max-heap. But A[i] may be less than either A[LEFT(i)] or A[RIGHT(i)], thus violating the heap properties.<br>
@@ -394,9 +412,9 @@ Which means if we somehow can make the RIGHT part (that may be broken because of
 </div>
 </div>
 
-<div id="outline-container-orgd22d8ac" class="outline-3">
-<h3 id="orgd22d8ac">Running time of MAX-HEAPIFY</h3>
-<div class="outline-text-3" id="text-orgd22d8ac">
+<div id="outline-container-org9e7b0ec" class="outline-3">
+<h3 id="org9e7b0ec">Running time of MAX-HEAPIFY</h3>
+<div class="outline-text-3" id="text-org9e7b0ec">
 <p>
 The running time of MAX-HEAPIFY equals to the time to figure out the largest and swap it with i, which is &theta;(1), plus the time to again running the MAX-HEAPIFY of the subtree.<br>
 In worst case, where the two subtrees LEFT(i) and RIGHT(i) is unbalanced and largest fall to the larger one.<br>
@@ -449,9 +467,9 @@ So with \( \forall c \geq c_0 = max(2, \frac{d}{\lg \frac{3}{2}}) \), the recurr
 </div>
 </div>
 
-<div id="outline-container-org4578491" class="outline-2">
-<h2 id="org4578491">Building the heap</h2>
-<div class="outline-text-2" id="text-org4578491">
+<div id="outline-container-org2c2d8fa" class="outline-2">
+<h2 id="org2c2d8fa">Building the heap</h2>
+<div class="outline-text-2" id="text-org2c2d8fa">
 <p>
 To build the heap we firstly should notice that all elements from \( [\lceil (size-1)/2 \rceil .. (size - 1)]\) are leaves nodes, which can be consider as a max-heap tree with only one single node.<br>
 By this, we can go bottom up and heapify all the parent nodes until we reach the root.<br>
@@ -465,9 +483,9 @@ By this, we can go bottom up and heapify all the parent nodes until we reach the
 </div>
 </div>
 
-<div id="outline-container-org475a15d" class="outline-3">
-<h3 id="org475a15d">Running time of BUILD-HEAP</h3>
-<div class="outline-text-3" id="text-org475a15d">
+<div id="outline-container-org77ae63a" class="outline-3">
+<h3 id="org77ae63a">Running time of BUILD-HEAP</h3>
+<div class="outline-text-3" id="text-org77ae63a">
 \begin{aligned}
 T(n) &= \sum_{i = 0}^{\verb+Height of heap+} n_i * O(i)\\
 &= \sum_{i = 0}^{\lceil {\lg n}\rceil} 2^{\lceil{\lg n - i}\rceil} * i\\
@@ -480,9 +498,9 @@ T(n) &= \sum_{i = 0}^{\verb+Height of heap+} n_i * O(i)\\
 </div>
 </div>
 </div>
-<div id="outline-container-orgbaa1332" class="outline-2">
-<h2 id="orgbaa1332">Applications</h2>
-<div class="outline-text-2" id="text-orgbaa1332">
+<div id="outline-container-org382841a" class="outline-2">
+<h2 id="org382841a">Applications</h2>
+<div class="outline-text-2" id="text-org382841a">
 <ul class="org-ul">
 <li><a href="./priority_queue.html">Priority Queue</a><br></li>
 <li><a href="./heap_sort.html">Heap sort</a><br></li>
@@ -490,9 +508,9 @@ T(n) &= \sum_{i = 0}^{\verb+Height of heap+} n_i * O(i)\\
 </div>
 </div>
 
-<div id="outline-container-orgcc3a1b6" class="outline-2">
-<h2 id="orgcc3a1b6">Complete Implementation</h2>
-<div class="outline-text-2" id="text-orgcc3a1b6">
+<div id="outline-container-org503062d" class="outline-2">
+<h2 id="org503062d">Complete Implementation</h2>
+<div class="outline-text-2" id="text-org503062d">
 <div class="org-src-container">
 <pre class="src src-C++"><span style="color: #FF1493;">#include</span> <span style="color: #CDC673;">&lt;iostream&gt;</span>
 <span style="color: #FF1493;">#include</span> <span style="color: #CDC673;">&lt;ostream&gt;</span>
@@ -635,7 +653,7 @@ After min heapify:
 <div id="postamble" class="status">
 <div class='footer'>
 Copyright 2020 Tai Dinh (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML).<br>
-Last updated 2020-01-18 lör 00:05. <br>
+Last updated 2020-01-22 ons 22:17. <br>
 Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.1).
 </div>
 <div id="disqus_thread"></div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-01-18 lör 00:20 -->
+<!-- 2020-01-22 ons 22:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Index</title>
@@ -193,9 +193,7 @@
 </style>
 <link rel='icon' type='image/png' sizes='16x16' href='/images/favicon-16x16.png'/>
 
-  <link rel='stylesheet' href='css/site.css' type='text/css'/>
-
-  <link rel='stylesheet' href='../css/site.css' type='text/css'/>
+  <link rel='stylesheet' href='/css/site.css' type='text/css'/>
 <link rel='icon' type='image/png' sizes='16x16' href='/images/favicon-16x16.png'/>
 
           <link rel="alternate" type="application/rss+xml"
@@ -265,6 +263,21 @@ for the JavaScript code in this tag.
 <li><a href='/theindex.html'>Index</a></li>
 </ul>
 </div>
+
+<nav id='tags-navigation'></nav>
+<script>
+  document.addEventListener( 'WebComponentsReady', function () {
+    var contentFilled = document.querySelector('#tags-navigation').querySelector('p');
+    if (!contentFilled) {
+      var link = document.querySelector('link[rel="import"]');
+      if (link) {
+        var content = link.import.querySelector('div[id="content"]');
+        var tagsref = document.importNode(content.querySelector('p'), true);
+        document.querySelector('#tags-navigation').appendChild(tagsref);
+      }
+    }
+  })
+</script>
 </div>
 <div id="content">
 <header>
@@ -273,33 +286,33 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf4a47ee">A</a></li>
-<li><a href="#org7072b31">H</a></li>
-<li><a href="#org03d3ca3">P</a></li>
+<li><a href="#org854d351">A</a></li>
+<li><a href="#org43c5acd">H</a></li>
+<li><a href="#org3db6bfb">P</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgf4a47ee" class="outline-2">
-<h2 id="orgf4a47ee">A</h2>
-<div class="outline-text-2" id="text-orgf4a47ee">
+<div id="outline-container-org854d351" class="outline-2">
+<h2 id="org854d351">A</h2>
+<div class="outline-text-2" id="text-org854d351">
 <ul class="org-ul">
 <li><a href="blogs/misc/firework.html">ASCII firework</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7072b31" class="outline-2">
-<h2 id="org7072b31">H</h2>
-<div class="outline-text-2" id="text-org7072b31">
+<div id="outline-container-org43c5acd" class="outline-2">
+<h2 id="org43c5acd">H</h2>
+<div class="outline-text-2" id="text-org43c5acd">
 <ul class="org-ul">
 <li><a href="blogs/algo/heap.html">Heap data structure</a></li>
 <li><a href="blogs/algo/heap_sort.html">Heap sort</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org03d3ca3" class="outline-2">
-<h2 id="org03d3ca3">P</h2>
-<div class="outline-text-2" id="text-org03d3ca3">
+<div id="outline-container-org3db6bfb" class="outline-2">
+<h2 id="org3db6bfb">P</h2>
+<div class="outline-text-2" id="text-org3db6bfb">
 <ul class="org-ul">
 <li><a href="blogs/algo/priority_queue.html">Priority Queue</a></li>
 </ul>

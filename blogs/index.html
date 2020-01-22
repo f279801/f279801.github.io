@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-01-18 lör 00:20 -->
+<!-- 2020-01-22 ons 22:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Straw Hat's Blogs</title>
@@ -261,14 +261,29 @@ for the JavaScript code in this tag.
 <li><a href='/theindex.html'>Index</a></li>
 </ul>
 </div>
+
+<nav id='tags-navigation'></nav>
+<script>
+  document.addEventListener( 'WebComponentsReady', function () {
+    var contentFilled = document.querySelector('#tags-navigation').querySelector('p');
+    if (!contentFilled) {
+      var link = document.querySelector('link[rel="import"]');
+      if (link) {
+        var content = link.import.querySelector('div[id="content"]');
+        var tagsref = document.importNode(content.querySelector('p'), true);
+        document.querySelector('#tags-navigation').appendChild(tagsref);
+      }
+    }
+  })
+</script>
 </div>
 <div id="content">
 <header>
 <h1 class="title">Straw Hat's Blogs</h1>
 </header>
-<div id="outline-container-org1421342" class="outline-2">
-<h2 id="org1421342">Heap sort</h2>
-<div class="outline-text-2" id="text-org1421342">
+<div id="outline-container-org7cd63b4" class="outline-2">
+<h2 id="org7cd63b4">Heap sort</h2>
+<div class="outline-text-2" id="text-org7cd63b4">
 <p>
 <div class="pubdate"> jan 17, 2020 </div><br>
 <code>Heap sort</code>, as the name indicated, is a sorting algorithm based on the <code>Heap</code> data structure.<br>
@@ -279,14 +294,15 @@ The heap property can be mantained by calling <code>HEAPIFY</code>.<br>
 The same process can be repeated until we have the whole list sorted.<br>
 </p>
 
+
 <p>
-<a href="../blogs/algo/heap_sort.html">Read more&#x2026;</a><br>
+<a href="/blogs/algo/heap_sort.html">Read more...</a><br>
 </p>
 </div>
 </div>
-<div id="outline-container-orgdac8bc2" class="outline-2">
-<h2 id="orgdac8bc2">Priority Queue</h2>
-<div class="outline-text-2" id="text-orgdac8bc2">
+<div id="outline-container-orgcade8e6" class="outline-2">
+<h2 id="orgcade8e6">Priority Queue</h2>
+<div class="outline-text-2" id="text-orgcade8e6">
 <p>
 <div class="pubdate"> jan 13, 2020 </div><br>
 A <b><i>priority queue</i></b> is a datastructure for maintaining a set S of elements, each with an associated <b><i>key</i></b> and supports below operations:<br>
@@ -302,14 +318,15 @@ A <b><i>priority queue</i></b> is a datastructure for maintaining a set S of ele
 The scheduler can also add a new job or increase a current job priority by calling <code>INSERT</code> or <code>INCREASE-KEY</code> accordingly.<br>
 </p>
 
+
 <p>
-<a href="../blogs/algo/priority_queue.html">Read more&#x2026;</a><br>
+<a href="/blogs/algo/priority_queue.html">Read more...</a><br>
 </p>
 </div>
 </div>
-<div id="outline-container-org4126c32" class="outline-2">
-<h2 id="org4126c32">Heap data structure</h2>
-<div class="outline-text-2" id="text-org4126c32">
+<div id="outline-container-orga623255" class="outline-2">
+<h2 id="orga623255">Heap data structure</h2>
+<div class="outline-text-2" id="text-orga623255">
 <p>
 <div class="pubdate"> jan 06, 2020 </div><br>
 In computre science, a <code>(binary) heap</code> data structure is a specialized <code>(binary) tree</code> that has below properties:<br>
@@ -320,17 +337,18 @@ In computre science, a <code>(binary) heap</code> data structure is a specialize
 </ul>
 <p>
 The node at the <i>top</i> of the heap is called the <b>root node</b>.<br>
-<img src="./algo/images/heap_1.png" alt="heap_1.png"><br>
+<img src="/blogs/algo/images/heap_1.png" alt="Heap data strcuture"><br><br>
 </p>
 
+
 <p>
-<a href="../blogs/algo/heap.html">Read more&#x2026;</a><br>
+<a href="/blogs/algo/heap.html">Read more...</a><br>
 </p>
 </div>
 </div>
-<div id="outline-container-org130832f" class="outline-2">
-<h2 id="org130832f">ASCII art firework for the new year</h2>
-<div class="outline-text-2" id="text-org130832f">
+<div id="outline-container-org6157926" class="outline-2">
+<h2 id="org6157926">ASCII art firework for the new year</h2>
+<div class="outline-text-2" id="text-org6157926">
 <p>
 <div class="pubdate"> jan 05, 2020 </div><br>
 So it's 2020. Let celebrate it by a firework.<br>
@@ -345,19 +363,19 @@ And if you:<br>
 Then let make an ASCII art firework.<br><br><br>
 </p>
 <p alt="Firework 2020" title="Firework Happy New Year 2020">
-<img src="misc/images/firework-new-year-2020.jpg" alt="Firework 2020" title="Firework Happy New Year 2020"><br>
-<br><br>
+<img src="/blogs/misc/images/firework-new-year-2020.jpg" alt="Firework 2020" title="Firework and happy new year 2020"><br><br>
 </p>
 
+
 <p>
-<a href="../blogs/misc/firework.html">Read more&#x2026;</a></p>
+<a href="/blogs/misc/firework.html">Read more...</a></p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 Copyright 2020 Tai Dinh (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML).<br>
-Last updated 2020-01-18 lör 00:20. <br>
+Last updated 2020-01-22 ons 22:55. <br>
 Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.3.1).
 </div>
 <div id="disqus_thread"></div>
